@@ -1,0 +1,44 @@
+html, body {
+  margin: 0;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  box-sizing:border-box;
+  border: 1px solid #e2e2e2;
+  padding: 0.2rem;
+  width: 100%;
+}
+
+th, td {
+  padding:0
+}
+
+th {
+  width: 20%;
+}
+
+.content {
+  max-width: 45rem;
+  margin: 0 auto;
+}
+
+.application-form {
+  padding-top: 1rem
+}
+
+.submit-area {
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.flash.info {
+  padding: 1rem;
+  background-color: #A5D6A7;
+}
