@@ -1,0 +1,6 @@
+{
+  "name": "careers-api-php",
+  "description": "Example Lusk Careers API integration with PHP",
+  "repository": "https://github.com/heroku/php-getting-started",
+  "addons": []
+}
