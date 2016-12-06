@@ -3,7 +3,6 @@
 namespace App\Forms;
 
 use Nette,
-	Nette\Utils\Html,
 	Nette\Application\UI\Form;
 
 

@@ -4,6 +4,7 @@ namespace App\Presenters;
 
 use Nette;
 
+
 class PositionsPresenter extends Nette\Application\UI\Presenter
 {
 	/** @var \App\Model\LuskApi @inject */
@@ -35,6 +36,7 @@ class PositionsPresenter extends Nette\Application\UI\Presenter
 		};
 		return $form;
 	}
+
 
 	public function renderDefault()
 	{
