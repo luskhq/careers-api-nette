@@ -16,7 +16,7 @@ class LuskApi
 	private $endpoint;
 	private $organizationId;
 	private $client;
-	
+
 	public function __construct(array $parameters)
 	{
 		$this->client = new GuzzleHttp\Client();;
@@ -47,36 +47,36 @@ class LuskApi
 
 	public function postCandidate($positionId, $name, $email, $coverLetter, $files, $privacyPolicyAgreement) {
 		$data = [
-	        [
-	            'name'     => 'name',
-	            'contents' => $name
-	        ],
-	        [
-	            'name'     => 'email',
-	            'contents' => $email
-	        ],
-	        [
-	            'name'     => 'coverLetter',
-	            'contents' => $coverLetter
-	        ],
-	        [
-	            'name'     => 'privacyPolicyAgreement',
-	            'contents' => $privacyPolicyAgreement
-	        ]
-	    ];
+					[
+							'name'     => 'name',
+							'contents' => $name
+					],
+					[
+							'name'     => 'email',
+							'contents' => $email
+					],
+					[
+							'name'     => 'coverLetter',
+							'contents' => $coverLetter
+					],
+					[
+							'name'     => 'privacyPolicyAgreement',
+							'contents' => $privacyPolicyAgreement
+					]
+			];
 
-	    foreach ($files as $i => $file) {
-	    	$data[] = [
-	            'name'     => 'files[' . $i . ']',
-	            'contents' => fopen($file->getTemporaryFile(), 'r')
-	        ];
-	    }
+			foreach ($files as $i => $file) {
+				$data[] = [
+							'name'     => 'files[' . $i . ']',
+							'contents' => fopen($file->getTemporaryFile(), 'r')
+					];
+			}
 
 		$res = $this->client->request('POST', $this->endpoint . '/position/' . $positionId . '/candidate', [
-		    'multipart' => $data
+				'multipart' => $data
 		]);
 
 		return Json::decode($res->getBody());
 	}
-		
+
 }

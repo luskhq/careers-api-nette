@@ -21,12 +21,12 @@ class ApplyFormFactory extends Nette\Object
 
 		$form->addText('email', 'Email')
 			->setAttribute('placeholder', 'Eg johnsmith@example.com')
-		    ->setRequired('Please enter your email.')
-		    ->addRule(Form::EMAIL, 'Please enter valid email.');
+			->setRequired('Please enter your email.')
+			->addRule(Form::EMAIL, 'Please enter valid email.');
 
-	    $form->addTextArea('coverLetter', 'Cover letter')
-	    	->setAttribute('placeholder', 'Cover letter should be short and concise.')
-		    ->setRequired('Please enter your email.');
+		$form->addTextArea('coverLetter', 'Cover letter')
+			->setAttribute('placeholder', 'Cover letter should be short and concise.')
+			->setRequired('Please enter your email.');
 
 		$form->addMultiUpload('documents', 'Documents');
 

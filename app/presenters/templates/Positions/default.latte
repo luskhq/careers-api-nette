@@ -9,7 +9,11 @@
 {/if}
 
 <ul>
-    {foreach $positions as $position}
-    	<li><a href="{link Positions:detail $position->id}">{$position->name}</a></li>
-    {/foreach}
+		{foreach $positions as $position}
+			<li>
+				<p>{$position->name}</p>
+				<p>{$position->lead}</p>
+				<p><a href="{link Positions:detail $position->id}">Find out more</a></p>
+			</li>
+		{/foreach}
 </ul>
