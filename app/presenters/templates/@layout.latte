@@ -5,12 +5,16 @@
 	<meta name="viewport" content="width=device-width">
 
 	<title>{ifset title}{include title|striptags}{/ifset}{ifset subtitle} | {include subtitle|striptags}{/ifset}</title>
+	<style>html, body {margin: 0}</style>
+	<link rel="stylesheet" href="/css/normalize.css">
+	<link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
 	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
-
-	{include content}
+	<div class="content">
+		{include content}
+	</div>
 
 	{block scripts}
 		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
