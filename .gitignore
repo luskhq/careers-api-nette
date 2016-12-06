@@ -1,6 +1,7 @@
 .env
-log/*
-temp/*
+tmp/log/*
+tmp/sesions/*
+tmp/cache/*
 vendor/*
 !.gitignore
 !.htaccess
