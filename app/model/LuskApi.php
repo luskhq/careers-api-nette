@@ -6,6 +6,11 @@ use Nette;
 use Nette\Utils\Json;
 use GuzzleHttp;
 
+/**
+ * Lusk public API
+ *
+ * @doc http://docs.lusk.apiary.io/
+ */
 class LuskApi
 {
 	private $endpoint;
@@ -18,7 +23,7 @@ class LuskApi
 		$this->endpoint = $parameters['endpoint'];
 		$this->organizationId = $parameters['organizationId'];
 	}
-	
+
 	public function getOrganizationDetails()
 	{
 		$res = $this->client->request('GET', $this->endpoint . '/organization/' . $this->organizationId);
