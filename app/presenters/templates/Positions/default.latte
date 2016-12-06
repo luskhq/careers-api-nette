@@ -1,0 +1,15 @@
+{block content}
+
+<h1 n:block=title>{$organization->name}</h1>
+
+<h2 n:block=subtitle>Available positions</h2>
+
+{if $organization->introduction}
+	<p>{$organization->introduction}</p>
+{/if}
+
+<ul>
+    {foreach $positions as $position}
+    	<li><a href="{link Positions:detail $position->id}">{$position->name}</a></li>
+    {/foreach}
+</ul>

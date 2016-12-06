@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 
-	<title>{ifset title}{include title|striptags} | {/ifset}Nette Web</title>
+	<title>{ifset title}{include title|striptags}{/ifset}{ifset subtitle} | {include subtitle|striptags}{/ifset}</title>
 </head>
 
 <body>
@@ -13,7 +13,8 @@
 	{include content}
 
 	{block scripts}
-	<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
+		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="//nette.github.io/resources/js/netteForms.min.js"></script>
 	{/block}
 </body>
 </html>

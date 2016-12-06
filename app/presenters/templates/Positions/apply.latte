@@ -1,0 +1,43 @@
+{block content}
+
+<h1 n:block=title>{$organization->name}</h1>
+
+<h2 n:block=subtitle>{$position->name}</h2>
+
+<p><a href="{link Positions:}">Careers</a> / <a href="{link Positions:detail $position->id}">{$position->name}</a> / <a href="{link Positions:apply $position->id}">Apply</a></p>
+
+{if $position->jobDescription}
+	<p>{$position->jobDescription}</p>
+{/if}
+
+<form n:name=applyForm>
+	<ul class=error n:if="$form->ownErrors">
+		<li n:foreach="$form->ownErrors as $error">{$error}</li>
+	</ul>
+
+	<table>
+		<tr class="required">
+			<th>{label name /}</th>
+			<td>{input name} <span class=error n:ifcontent>{inputError name}</span></td>
+		</tr>
+		<tr class="required">
+			<th>{label email /}</th>
+			<td>{input email} <span class=error n:ifcontent>{inputError email}</span></td>
+		</tr>
+		<tr class="required">
+			<th>{label coverLetter /}</th>
+			<td>{input coverLetter} <span class=error n:ifcontent>{inputError coverLetter}</span></td>
+		</tr>
+		<tr>
+			<th>{label documents /}</th>
+			<td>{input documents} <span class=error n:ifcontent>{inputError documents}</span></td>
+		</tr>
+		<tr class="required">
+			<th>{input agree}</th>
+			<td>I agree to the <a href="{link PrivacyPolicy:}">Privacy Policy</a>. <span class=error n:ifcontent>{inputError name}</span></td>
+		</tr>
+		<tr>
+			<td colspan="2">{input send}</td>
+		</tr>
+	</table>
+</form>
