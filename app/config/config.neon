@@ -2,7 +2,9 @@
 # https://nette.org/security-warning
 
 parameters:
-
+	api: 
+		endpoint: https://prawn-public-api-service--pr-1.herokuapp.com/v1
+		organizationId: blueberry
 
 php:
 	date.timezone: Europe/Prague
@@ -19,4 +21,6 @@ session:
 
 
 services:
+	- App\Forms\ApplyFormFactory
 	router: App\RouterFactory::createRouter
+	api: App\Model\LuskApi(%api%)
