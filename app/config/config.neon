@@ -2,9 +2,9 @@
 # https://nette.org/security-warning
 
 parameters:
-	api: 
-		endpoint: https://prawn-public-api-service--pr-1.herokuapp.com/v1
-		organizationId: blueberry
+	api:
+		endpoint: https://api.lusk.io/v1
+		organizationId: 584969b37a4f1d1700aeb9c7
 
 php:
 	date.timezone: Europe/Prague
