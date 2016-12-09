@@ -44,13 +44,7 @@ class PositionsPresenter extends Nette\Application\UI\Presenter
 		$this->template->positions = $this->api->getOrganizationPositions();
 	}
 
-	public function renderDetail($id)
-	{
-		$this->template->organization = $this->api->getOrganizationDetails();
-		$this->template->position = $this->api->getPosition($id);
-	}
-
-	public function actionApply($id)
+	public function actionDetail($id)
 	{
 		$this->positionId = $id;
 		$this->template->organization = $this->api->getOrganizationDetails();

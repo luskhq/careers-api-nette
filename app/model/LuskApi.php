@@ -46,7 +46,7 @@ class LuskApi
 		return Json::decode($res->getBody());
 	}
 
-	public function postCandidate($positionId, $name, $email, $coverLetter, $files, $privacyPolicyAgreement) {
+	public function postCandidate($positionId, $name, $email, $coverLetter, $documents, $privacyPolicyAgreement) {
 		$data = [
 					[
 							'name'     => 'name',
@@ -66,10 +66,11 @@ class LuskApi
 					]
 			];
 
-			foreach ($files as $i => $file) {
+			foreach ($documents as $i => $document) {
+				$document->move(__DIR__ . '/../../tmp/cache/' . $document->name);
 				$data[] = [
 							'name'     => 'files[' . $i . ']',
-							'contents' => fopen($file->getTemporaryFile(), 'r')
+							'contents' => fopen($document, 'r')
 					];
 			}
 
