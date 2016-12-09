@@ -27,22 +27,22 @@ class LuskApi
 
 	public function getOrganizationDetails()
 	{
-		$res = $this->client->request('GET', $this->endpoint . '/organization/' . $this->organizationId);
+		$res = $this->client->request('GET', $this->endpoint . '/organizations/' . $this->organizationId);
 		return Json::decode($res->getBody());
 	}
 
 	public function getOrganizationPositions() {
-		$res = $this->client->request('GET', $this->endpoint . '/organization/' . $this->organizationId . '/positions');
+		$res = $this->client->request('GET', $this->endpoint . '/organizations/' . $this->organizationId . '/positions');
 		return Json::decode($res->getBody());
 	}
 
 	public function getPrivacyPolicy() {
-		$res = $this->client->request('GET', $this->endpoint . '/organization/' . $this->organizationId . '/privacy-policy');
+		$res = $this->client->request('GET', $this->endpoint . '/organizations/' . $this->organizationId . '/privacy-policy');
 		return Json::decode($res->getBody());
 	}
 
 	public function getPosition($positionId) {
-		$res = $this->client->request('GET', $this->endpoint . '/position/' . $positionId);
+		$res = $this->client->request('GET', $this->endpoint . '/organizations/' . $this->organizationId . '/positions/' . $positionId);
 		return Json::decode($res->getBody());
 	}
 
