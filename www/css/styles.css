@@ -17,7 +17,8 @@ textarea {
 }
 
 th, td {
-  padding:0
+  padding:0;
+  vertical-align: top;
 }
 
 th {
@@ -30,13 +31,8 @@ th {
   padding: 0 1rem 2rem;
 }
 
-.application-form {
-  padding-top: 1rem
-}
-
 .submit-area {
-  padding-top: 1.5rem;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
 }
 
 .flash.info {

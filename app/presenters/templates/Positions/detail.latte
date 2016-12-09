@@ -34,12 +34,13 @@
 			<th>{label documents /}</th>
 			<td>{input documents} <span class=error n:ifcontent>{inputError documents}</span></td>
 		</tr>
-		<tr class="required">
-			<th>{input agree}</th>
-			<td>I agree to the <a href="{link PrivacyPolicy:}">Privacy Policy</a>. <span class=error n:ifcontent>{inputError name}</span></td>
-		</tr>
-		<tr>
-			<td colspan="2">{input send}</td>
-		</tr>
 	</table>
+	<div class="submit-area">
+		<label>
+			{input agree} I agree to the <a href="{link PrivacyPolicy:}">Privacy Policy</a>. <span class=error n:ifcontent>{inputError name}</span>
+		</label>
+	</div>
+	<div>
+		{input send}
+	</div>
 </form>
