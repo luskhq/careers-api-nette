@@ -73,7 +73,7 @@ class LuskApi
 					];
 			}
 
-		$res = $this->client->request('POST', $this->endpoint . '/position/' . $positionId . '/candidate', [
+		$res = $this->client->request('POST', $this->endpoint . '/organizations/' . $this->organizationId . '/positions/' . $positionId . '/candidates', [
 				'multipart' => $data
 		]);
 
